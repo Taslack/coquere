@@ -1,85 +1,52 @@
-Recipes = new Mongo.Collection('recipes');
+import { Mongo } from 'meteor/mongo';
 
-Recipes.allow({
-  insert: function(userId, doc){
-    return !!userId;
-  },
-  update: function(userId, doc){
-    return !!userId;
-  }
-});
 
-Ingredient = new SimpleSchema({
-  name: {
-    type: String
-  },
-  amount: {
-    type: String
-  }
-});
+export const Recipes = new Mongo.Collection('recipes');
 
-Tools = new SimpleSchema({
-  name: {
-    type: String
-  }
-});
-
-RecipeSchema = new SimpleSchema({
-  name: {
-    type: String,
-    label: "Name"
-  },
-  desc: {
-    type: String,
-    label: "Description"
-  },
-  ingredients: {
-    type: [Ingredient]
-  },
-  tools: {
-    type: [Tools]
-  },
-  inMenu: {
-    type: Boolean,
-    defaultValue: false,
-    optional: true,
-    autoform: {
-      type: "hidden"
-    }
-  },
-  author: {
-    type: String,
-    label: "Author",
-    autoValue: function() {
-      return this.userId
-    },
-    autoform: {
-      type: "hidden"
-    }
-  },
-  createdAt: {
-    type: Date,
-    label: "Created At",
-    autoValue: function(){
-      return new Date()
-    },
-    autoform: {
-      type: "hidden"
-    }
-  }
-});
+if (Meteor.isServer){
+  Meteor.publish('recipes', function recipePublication(){
+    return Recipes.find({});
+  });
+}
 
 Meteor.methods({
-  toggleMenuItem: function(id, currentState){
-    Recipes.update(id, {
-      $set: {
-        inMenu: !currentState
-      }
+  'tasks.insert'(text){
+    check(text, String);
+    if (! this.userId){
+      throw new Meteor.Error('not-authorized');
+    }
+
+    Tasks.insert({
+      text,
+      createdAt: new Date(),
+      owner: this.userId,
+      username: Meteor.users.findOne(this.userId).username
     });
   },
-  deleteRecipe: function(id) {
-    Recipes.remove(id);
+  'tasks.remove'(taskId){
+    check(taskId, String);
+    const task = Tasks.findOne(taskId);
+    if (task.private && task.owner !== this.userId){
+      throw new Meteor.Error(not-authorized);
+    }
+    Tasks.remove(taskId);
+  },
+  'tasks.setChecked'(taskId, setChecked){
+    check(taskId, String);
+    check(setChecked, Boolean);
+    const task = Task.findOne(taskId);
+    if (task.private && task.owner !== this.userId){
+      throw new Meteor.Error('not-authorized');
+    }
+    Tasks.update(taskId, {$set: {checked: setChecked}});
+  },
+  'tasks.setPrivate'(taskId, setToPrivate){
+    check(taskId, String);
+    check(setToPrivate, Boolean);
+    const task = Tasks.findOne(taskId);
+    if (task.owner !== this.userId){
+      throw new Meteor.Error('not-authorized');
+    }
+    Tasks.update(taskId, {$set: {private: setToPrivate}});
   }
 });
-
-Recipes.attachSchema( RecipeSchema );

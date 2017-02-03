@@ -1,3 +1,0 @@
-
-import './mainpage';
-import './recipe';

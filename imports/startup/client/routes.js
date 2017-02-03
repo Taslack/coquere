@@ -1,14 +1,13 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
-import '../../ui/pages';
+import '../../ui/pages/body.js'
+
 
 FlowRouter.route('/', {
   name: 'home',
   action(){
-    BlazeLayout.render('MainLayout', {search: 'Search'});
-    BlazeLayout.render('MainLayout', {navMenu: 'FloatingMenu'});
-    BlazeLayout.render('MainLayout', {main: 'mainPage'});
+    BlazeLayout.render('mainLayout', {search: 'search', menu: 'toolbarMenu', main: 'recipes'});
    }
 })
 

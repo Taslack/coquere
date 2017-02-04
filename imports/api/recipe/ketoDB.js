@@ -10,29 +10,30 @@ if (Meteor.isServer){
 }
 
 Meteor.methods({
-  'tasks.insert'(text){
+  'recipe.insert'(text){
     check(text, String);
+    /* User check.
     if (! this.userId){
       throw new Meteor.Error('not-authorized');
-    }
+    }*/
 
-    Tasks.insert({
+    Recipes.insert({
       text,
       createdAt: new Date(),
       owner: this.userId,
       username: Meteor.users.findOne(this.userId).username
     });
   },
-  'tasks.remove'(taskId){
-    check(taskId, String);
-    const task = Tasks.findOne(taskId);
-    if (task.private && task.owner !== this.userId){
+  'recipes.remove'(recipeId){
+    check(recipeId, String);
+    const recipe = Recipes.findOne(recipeId);
+    if (recipe.owner !== this.userId){
       throw new Meteor.Error(not-authorized);
     }
-    Tasks.remove(taskId);
-  },
-  'tasks.setChecked'(taskId, setChecked){
-    check(taskId, String);
+    Recipes.remove(recipeId);
+/*  },  Remove sample code.
+  'tasks.setChecked'(recipeId, setChecked){
+    check(recipeId, String);
     check(setChecked, Boolean);
     const task = Task.findOne(taskId);
     if (task.private && task.owner !== this.userId){
@@ -47,6 +48,6 @@ Meteor.methods({
     if (task.owner !== this.userId){
       throw new Meteor.Error('not-authorized');
     }
-    Tasks.update(taskId, {$set: {private: setToPrivate}});
+    Tasks.update(taskId, {$set: {private: setToPrivate}});*/
   }
 });

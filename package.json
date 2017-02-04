@@ -1,12 +1,30 @@
 {
   "name": "keto.cooking",
   "private": true,
-  "scripts": {
-    "start": "meteor run"
-  },
   "dependencies": {
     "babel-runtime": "6.18.0",
     "bcrypt": "^1.0.2",
     "meteor-node-stubs": "~0.2.0"
-  }
+  },
+  "version": "0.1.0",
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-plugin-meteor": "^4.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taslack/keto-cookbook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Taslack/keto-cookbook/issues"
+  },
+  "homepage": "https://github.com/Taslack/keto-cookbook#readme",
+  "description": ""
+  "scripts": {
+  "lint": "eslint ."
+},
 }

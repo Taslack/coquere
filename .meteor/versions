@@ -8,10 +8,7 @@ accounts-ui@1.1.9
 accounts-ui-unstyled@1.1.12
 alanning:roles@1.2.15
 aldeed:autoform@5.8.1
-aldeed:collection2@2.10.0
-aldeed:collection2-core@1.2.0
-aldeed:schema-deny@1.1.0
-aldeed:schema-index@1.1.1
+aldeed:collection2-core@2.0.0
 aldeed:simple-schema@1.5.3
 allow-deny@1.0.5
 autoupdate@1.2.11
@@ -130,6 +127,7 @@ templating@1.2.15
 templating-compiler@1.2.15
 templating-runtime@1.2.15
 templating-tools@1.0.5
+tmeasday:check-npm-versions@0.3.1
 tracker@1.1.1
 ui@1.0.12
 underscore@1.0.10

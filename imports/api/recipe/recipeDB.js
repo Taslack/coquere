@@ -1,21 +1,15 @@
 import { Mongo } from 'meteor/mongo';
-
+import './recipeSchema.js';
 
 export const Recipes = new Mongo.Collection('recipes');
 
-if (Meteor.isServer){
-  Meteor.publish('recipes', function recipePublication(){
-    return Recipes.find({});
-  });
-}
-
-Meteor.methods({
+/*Meteor.methods({
   'recipe.insert'(text){
     check(text, String);
-    /* User check.
+    // User check.
     if (! this.userId){
       throw new Meteor.Error('not-authorized');
-    }*/
+    }
 
     Recipes.insert({
       text,
@@ -30,7 +24,7 @@ Meteor.methods({
     if (recipe.owner !== this.userId){
       throw new Meteor.Error(not-authorized);
     }
-    Recipes.remove(recipeId);
+    Recipes.remove(recipeId);*/
 /*  },  Remove sample code.
   'tasks.setChecked'(recipeId, setChecked){
     check(recipeId, String);
@@ -48,6 +42,6 @@ Meteor.methods({
     if (task.owner !== this.userId){
       throw new Meteor.Error('not-authorized');
     }
-    Tasks.update(taskId, {$set: {private: setToPrivate}});*/
+    Tasks.update(taskId, {$set: {private: setToPrivate}});
   }
-});
+});*/

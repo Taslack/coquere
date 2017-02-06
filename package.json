@@ -30,44 +30,6 @@
     "shell-source": "^1.1.0",
     "shelljs": "^0.7.4"
   },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "allowImportExportEverywhere": true
-    },
-    "plugins": [
-      "meteor"
-    ],
-    "extends": [
-      "airbnb",
-      "plugin:meteor/recommended"
-    ],
-    "rules": {
-      "import/no-extraneous-dependencies": "off",
-      "import/prefer-default-export": "off",
-      "no-underscore-dangle": "off",
-      "object-shorthand": [
-        "error",
-        "always",
-        {
-          "avoidQuotes": false
-        }
-      ],
-      "meteor/eventmap-params": [
-        "error",
-        {
-          "eventParamName": "event",
-          "templateInstanceParamName": "instance"
-        }
-      ],
-      "meteor/template-names": [
-        "off"
-      ]
-    },
-    "settings": {
-      "import/resolver": "meteor"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Taslack/keto-cookbook.git"

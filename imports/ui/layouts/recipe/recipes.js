@@ -8,4 +8,4 @@ Template.recipes.helpers({
   recipes() {
     return Recipes.find({});
   }
-})
+});

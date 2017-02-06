@@ -1,7 +1,7 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
-import '../../ui/pages/body.js'
+import '../../ui/pages/body.js';
 
 
 FlowRouter.route('/', {
@@ -9,7 +9,8 @@ FlowRouter.route('/', {
   action(){
     BlazeLayout.render('mainLayout', {search: 'search', menu: 'toolbarMenu', main: 'recipes'});
    }
-})
+});
+
 
 /* Example code
 if (Meteor.isClient) {

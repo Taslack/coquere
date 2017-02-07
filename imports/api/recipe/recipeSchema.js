@@ -4,8 +4,6 @@ import SimpleSchema from 'simpl-schema';
 
 import { Recipes } from './recipeDB.js';
 
-//export const Schema = {};
-
 Upc = new SimpleSchema({
   upc: {type: SimpleSchema.Integer, max: 48, label: "UPC"}
 });

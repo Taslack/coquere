@@ -1,7 +1,9 @@
 import { Mongo } from 'meteor/mongo';
+
 import './recipeSchema.js';
 
 export const Recipes = new Mongo.Collection('recipes');
+
 
 /*Meteor.methods({
   'recipe.insert'(text){

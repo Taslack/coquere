@@ -1,2 +1,2 @@
-import '../../api/recipe/methods.js';
-import '../../api/recipe/server/publications.js';
+import '../imports/api/recipe/methods.js';
+import '../imports/api/recipe/server/publications.js';

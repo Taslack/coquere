@@ -7,7 +7,7 @@ import '../../ui/pages/body.js';
 FlowRouter.route('/', {
   name: 'home',
   action(){
-    BlazeLayout.render('mainLayout', {search: 'search', menu: 'toolbarMenu', main: 'recipes'});
+    BlazeLayout.render('mainLayout', {search: 'search', menu: 'toolbarMenu', main: 'recipeForm'});
    }
 });
 

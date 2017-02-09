@@ -2,7 +2,7 @@
 
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
-import { Recipes } from './ketoDB.js';
+import { Recipes } from './recipeDB.js';
 
 Meteor.methods({
   'recipes.insert'(title, url) {

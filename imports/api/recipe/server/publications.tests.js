@@ -1,7 +1,3 @@
-// Tests for the links publications
-//
-// https://guide.meteor.com/testing.html
-
 import { assert } from 'meteor/practicalmeteor:chai';
 import { Recipes } from '../recipeDB.js';
 import { PublicationCollector } from 'meteor/johanbrook:publication-collector';

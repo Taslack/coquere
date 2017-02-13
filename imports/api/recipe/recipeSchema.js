@@ -1,7 +1,4 @@
-//import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
-//import { autoform } from 'meteor/aldeed:autoform';
-
 import { Recipes } from './recipeDB.js';
 
 Upc = new SimpleSchema({
@@ -119,7 +116,7 @@ Recipe = new SimpleSchema({
 });
 
 Recipes.attachSchema(Upc);
-//Recipes.attachSchema(Ingredient, {selector: {type: 'varient'}});
-//Recipes.attachSchema(Kitchenware, {selector: {type: 'simple'}});
-//Recipes.attachSchema(UoM, {selector: {type: 'simple'}});
-//Recipes.attachSchema(Recipe, {selector: {type: 'simple'}});
+Recipes.attachSchema(Ingredient, {selector: {type: 'varient'}});
+Recipes.attachSchema(Kitchenware, {selector: {type: 'simple'}});
+Recipes.attachSchema(UoM, {selector: {type: 'simple'}});
+Recipes.attachSchema(Recipe, {selector: {type: 'simple'}});

@@ -1,5 +1,3 @@
-// All links-related publications
-
 import { Meteor } from 'meteor/meteor';
 import { Recipes } from '../recipeDB.js';
 

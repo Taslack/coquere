@@ -56,3 +56,7 @@ aldeed:schema-deny
 aldeed:schema-index
 aldeed:autoform
 fourseven:scss
+github-config-ui
+facebook-config-ui
+google-config-ui
+useraccounts:core

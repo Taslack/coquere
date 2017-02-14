@@ -2,12 +2,17 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 import '../../ui/layouts/body/body.js';
+import '../../ui/components/search/search.js';
+import '../../ui/components/navMenu/navMenu.js';
+import '../../ui/components/recipes/recipes.js';
+
+
 
 
 FlowRouter.route('/', {
   name: 'home',
   action(){
-    BlazeLayout.render('mainLayout', {search: 'search', menu: 'toolbarMenu', main: 'recipeForm'});
+    BlazeLayout.render('mainLayout', {search: 'search', menu: 'toolbarMenu', main: 'recipes'});
    }
 });
 

@@ -1,0 +1,32 @@
+<template name="recipeInsertForm">
+  {{> quickForm collection=Recipes id="recipeInsert" type="insert"}}
+</template>
+
+<template name="recipeInsertFormTest">
+  <div id="recipeInsertForm" class="container">
+    <form>
+      <fieldset class="form-group">
+        <label for="recipe">Recipe Name</label>
+        <input type="text" class="form-control" id="recipe" placeholder="Enter the name of the recipe.">
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="description">Recipe Description</label>
+        <input type="text" class="form-control" id="description" placeholder="Enter short description of the recipe.">
+      </fieldset>
+      <div class="input-field col s12">
+        <label for="kitchenwares">Kitchenware</label>
+        <datalist id="kitchenwares">
+          {{#each kitchenwares}}
+            <option value="{{kitchenware}}">{{kitchenware}}</option>
+          {{/each}}
+        </datalist>
+      </div>
+      <fieldset class="form-group">
+        <label for="K"></label>
+        <input type="file" class="form-control-file" id="exampleInputFile">
+        <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</template>

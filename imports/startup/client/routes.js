@@ -5,9 +5,8 @@ import '../../ui/layouts/body/body.js';
 import '../../ui/components/search/search.js';
 import '../../ui/components/navMenu/navMenu.js';
 import '../../ui/components/recipes/recipes.js';
-
-
-
+import '../../ui/components/recipes/recipeInsertForm.js';
+import '../../ui/components/recipes/recipe.js';
 
 FlowRouter.route('/', {
   name: 'home',
@@ -16,59 +15,16 @@ FlowRouter.route('/', {
    }
 });
 
-
-/* Example code
-if (Meteor.isClient) {
-  Accounts.onLogin(function(){
-    FlowRouter.go('recipe-book');
-  });
-
-  Accounts.onLogout(function(){
-    FlowRouter.go('main');
-  });
-}
-FlowRouter.triggers.enter([function(context, redirect){
-  if(!Meteor.userId()){
-    FlowRouter.go('main');
-  }
-}]);
-
-FlowRouter.route('/',{
-  name: 'main',
+FlowRouter.route('/addrecipe', {
+  name: 'addrecipe',
   action(){
-    if(Meteor.userId()){
-      FlowRouter.go('MainLayout');
-    }
-    GAnalytics.pageview();
-    BlazeLayout.render('MainLayout');
-  }
+    BlazeLayout.render('mainLayout', {menu: 'toolbarMenu', main: 'recipeInsertForm'});
+   }
 });
 
-FlowRouter.route('/recipe-book',{
-  name: 'recipe-book',
+FlowRouter.route('/addrecipetest', {
+  name: 'addrecipe',
   action(){
-    BlazeLayout.render('MainLayout', {main: 'Recipes'});
-  }
+    BlazeLayout.render('mainLayout', {menu: 'toolbarMenu', main: 'recipeInsertFormTest'});
+   }
 });
-
-FlowRouter.route('/recipe/:id',{
-  name: 'recipe',
-  action(){
-    BlazeLayout.render('MainLayout', {main: 'RecipeSingle'});
-  }
-});
-
-FlowRouter.route('/menu',{
-  name: 'menu',
-  action(){
-    BlazeLayout.render('MainLayout', {main: 'Menu'});
-  }
-});
-
-FlowRouter.route('/shopping-list',{
-  name: 'shopping-list',
-  action(){
-    BlazeLayout.render('MainLayout', {main: 'ShoppingList'});
-  }
-});
-*/

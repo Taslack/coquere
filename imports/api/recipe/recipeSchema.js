@@ -1,7 +1,6 @@
 import { Template } from 'meteor/templating';
 import SimpleSchema from 'simpl-schema';
-//import { autoform } from 'meteor/aldeed:autoform';
-import { Recipes, UoMs, Kitchenwares, Ingredients } from './recipeDB.js';
+import { Recipes, UoMs, Kitchenwares, Ingredients, UPCs } from './recipeDB.js';
 
 Recipes.allow({
   insert: function () {
@@ -28,6 +27,30 @@ Kitchenwares.allow({
 });
 
 Ingredients.allow({
+  insert: function () {
+    return true;
+  },
+  remove: function () {
+    return true;
+  },
+  update: function() {
+    return true;
+  }
+});
+
+UPCs.allow({
+  insert: function () {
+    return true;
+  },
+  remove: function () {
+    return true;
+  },
+  update: function() {
+    return true;
+  }
+});
+
+UoMs.allow({
   insert: function () {
     return true;
   },
@@ -74,34 +97,33 @@ Kitchenware = new SimpleSchema({
 });
 
 Recipe = new SimpleSchema({
-  recipe: {
+  title: {
     type: String,
-    label: "Name",
-    max: 50
+    label: "Title"
   },
   description: {
     type: String,
     label: "Description",
-    max: 200
+    max: 200,
+  },
+  kitchenware: {
+    type: Array,
+   },
+   'kitchenware.$': Kitchenware,
+  cookTime: {
+    type: String,
+    label: "Cook Time"
+ },
+  cookingMethod: {
+    type: String,
+    label: "Cooking Method"
   }//,
-  // kitchenwares: {
-  //   type: Array
-  // },
-  // 'kitchenwares.$': Kitchenware,
-  // cookTime: {
-  //   type: String,
-  //   label: "Cook Time"
-  // },
-  // cookingMethod: {
-  //   type: String,
-  //   label: "Cooking Method"
-  // },
   // ingredients: {
   //     type: Array,
   //     label: "Ingredients"
   // },
   // 'type.$': Ingredient,
-  // 'type.$.ammount': SimpleSchema.Integer,
+  // 'type.$.amount': SimpleSchema.Integer,
   // 'type.$.uom': UoM,
   // nutrition: {
   //   type: String,
@@ -159,8 +181,10 @@ Recipe = new SimpleSchema({
 });
 
 Recipes.attachSchema(Recipe);
+// Recipes.attachSchema(UoM);
 // Ingredients.attachSchema(Ingredient);
 // Ingredients.attachSchema(Upc);
 // Kitchenwares.attachSchema(Kitchenware);
 // Kitchenwares.attachSchema(Upc);
 // UoMs.attachSchema(UoM);
+// UPCs.attachSchema(Upc);

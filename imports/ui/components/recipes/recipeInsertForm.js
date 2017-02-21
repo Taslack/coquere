@@ -9,7 +9,7 @@ import './recipeInsertForm.html';
 Template.recipeInsertForm.onCreated(function (){
   var self = this;
   self.autorun(function(){
-    self.subscribe('kitchenwares.all');
+    self.subscribe('kitchenware.all');
     self.subscribe('recipes.all');
   });
 });
@@ -17,6 +17,9 @@ Template.recipeInsertForm.onCreated(function (){
 Template.recipeInsertForm.helpers({
   Recipes: function () {
     return Recipes;
+  },
+  Kitchenwares: function() {
+    return Kitchenwares;
   }
 });
 

@@ -26,6 +26,12 @@ shell-server@0.2.1                  # Server-side component of the `meteor shell
 #kuip:schema-graphql-bridge
 #swydo:blaze-apollo
 
+#Collection and forms.
+meteortoys:allthings
+aldeed:collection2-core
+#aldeed:schema-deny
+#aldeed:schema-index
+aldeed:autoform
 
 kadira:flow-router
 kadira:blaze-layout
@@ -44,19 +50,15 @@ alanning:roles
 matb33:bootstrap-glyphicons
 zimme:active-route
 gwendall:auth-client-callbacks
-meteortoys:allthings
 datariot:ganalytics
 check@1.2.4
 materialize:materialize
 zodiase:material-design-icons-fonts
 cunneen:accounts-admin-materializecss
 jshint@1.1.7
-aldeed:collection2-core
-aldeed:schema-deny
-aldeed:schema-index
-aldeed:autoform
-fourseven:scss
 github-config-ui
 facebook-config-ui
 google-config-ui
 useraccounts:core
+dburles:collection-helpers
+reywood:publish-composite

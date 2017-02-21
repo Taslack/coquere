@@ -1,7 +1,6 @@
 <template name="recipeInsertForm">
-  {{> quickForm collection=Recipes id="recipeInsert" type="insert"}}
+  {{> quickForm collection=Recipes id="recipeInsert" type="insert" omitFields="createdAt, author, updated" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9"}}
 </template>
-
 <template name="recipeInsertFormTest">
   <div id="recipeInsertForm" class="container">
     <form>

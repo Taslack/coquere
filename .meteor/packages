@@ -32,6 +32,8 @@ aldeed:collection2-core
 #aldeed:schema-deny
 #aldeed:schema-index
 aldeed:autoform
+dburles:collection-helpers
+reywood:publish-composite
 
 kadira:flow-router
 kadira:blaze-layout
@@ -60,5 +62,3 @@ github-config-ui
 facebook-config-ui
 google-config-ui
 useraccounts:core
-dburles:collection-helpers
-reywood:publish-composite
